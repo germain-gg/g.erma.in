@@ -6,3 +6,8 @@
 
 [context.production]
     publish = "public/"
+
+[[redirects]]
+    from = "https://nervous-goldwasser-43ceb1.netlify.com/*"
+    to = "https://g.erma.in/:splat"
+    status = 301
