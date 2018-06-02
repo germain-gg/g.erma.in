@@ -10,7 +10,15 @@ const Layout = ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <div style={{
+       position: "absolute",
+       top: "50%",
+       left: "50%",
+       transform: "translate3d(-50%, -50%, 0)",
+       textAlign: "center"
+    }}>
+        {children()}
+    </div>
   </div>
 )
 
