@@ -5,4 +5,4 @@
     command = "gatsby build"
 
 [context.production]
-    publish = "publish/"
+    publish = "public/"
