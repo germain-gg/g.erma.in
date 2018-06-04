@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://nervous-goldwasser-43ceb1.netlify.com/* https://g.erma.in/:splat 301!
