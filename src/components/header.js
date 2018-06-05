@@ -1,35 +1,38 @@
 import React from 'react'
 import styled from 'styled-components';
+import theme from '../style/theme';
 
-const DEFAULT_PADDING = "50px";
 
 const HeaderTitle = styled.h1`
   margin: 0;
-  font-family: Helvetica, sans-serif;
-  transform: translateX(175px);
-  transition: transform .2s ease-in-out;
-  text-align: right;
+  font-family: ${theme.fontFamily};
 `;
 
 const StyledHeader = styled.header`
+  box-sizing: border-box;
+  max-width: ${theme.siteWidth};
+  margin: 0 auto;
   position: relative;
-  width: 100%;
-  padding: ${DEFAULT_PADDING};
+  padding: ${theme.headerPadding} 0;
+  border-bottom: 5px solid ${theme.mainColor};
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: ${DEFAULT_PADDING};
-    bottom: ${DEFAULT_PADDING};
-    right: -${DEFAULT_PADDING};
-    width: 100px;
-    background: #fff;
-    transform: skew(-25deg);
-    border-left: 2px solid #000;
+  @media (max-width: calc(${theme.siteWidth} + 40px)) {
+    margin: 0 20px;
+    text-align: center;
   }
 
-  &:hover ${HeaderTitle} {
-    transform: translateX(0); 
+  @media (min-width: calc(${theme.siteWidth} + 40px)) {
+    &:after {
+      content: '';
+      position: absolute;
+      top: ${theme.headerPadding};
+      bottom: ${theme.headerPadding};
+      left: 200px;
+      width: 150px;
+      background: #fff;
+      transform: skew(-25deg);
+      border-left: 2px solid #000;
+    }
   }
 `;
 
