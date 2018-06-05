@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import Header from '../components/header';
+import Main from '../components/main';
 import './index.css'
 
 const Layout = ({ children, data }) => (
@@ -29,8 +30,13 @@ const Layout = ({ children, data }) => (
 			<html lang="en" dir="ltr"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     </Helmet>
-		<Header siteTitle={data.site.siteMetadata.headerName} />
-		{children()}
+		<Header
+			siteTitle={data.site.siteMetadata.headerName}
+			links={data.site.siteMetadata.links}
+		/>
+		<Main>
+			{children()}
+		</Main>
   </div>
 )
 
@@ -47,7 +53,11 @@ export const query = graphql`
 				name,
 				title,
 				headerName,
-				description
+				description,
+				links {
+					url,
+					name
+				}
       }
     }
   }

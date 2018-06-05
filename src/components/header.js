@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import theme from '../style/theme';
+import Nav from './nav';
 
 
 const HeaderTitle = styled.h1`
@@ -9,6 +10,9 @@ const HeaderTitle = styled.h1`
 `;
 
 const StyledHeader = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
   max-width: ${theme.siteWidth};
   margin: 0 auto;
@@ -16,18 +20,19 @@ const StyledHeader = styled.header`
   padding: ${theme.headerPadding} 0;
   border-bottom: 5px solid ${theme.mainColor};
 
-  @media (max-width: calc(${theme.siteWidth} + 40px)) {
-    margin: 0 20px;
+  @media (max-width: calc(${theme.siteWidth} + ${theme.spacing} + ${theme.spacing})) {
+    margin: 0 ${theme.spacing};
     text-align: center;
+    flex-direction: column;
   }
 
-  @media (min-width: calc(${theme.siteWidth} + 40px)) {
+  @media (min-width: calc(${theme.siteWidth} + ${theme.spacing} + ${theme.spacing})) {
     &:after {
       content: '';
       position: absolute;
       top: ${theme.headerPadding};
       bottom: ${theme.headerPadding};
-      left: 200px;
+      left: 180px;
       width: 150px;
       background: #fff;
       transform: skew(-25deg);
@@ -36,9 +41,10 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, links }) => (
   <StyledHeader>
     <HeaderTitle>{siteTitle}</HeaderTitle>
+    {/* <Nav links={links} /> */}
   </StyledHeader>
 )
 
