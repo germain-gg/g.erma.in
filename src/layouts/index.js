@@ -29,15 +29,8 @@ const Layout = ({ children, data }) => (
 			<html lang="en" dir="ltr"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     </Helmet>
-    <div style={{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate3d(-50%, -50%, 0)",
-      textAlign: "center"
-    }}>
-        {children()}
-    </div>
+		<Header siteTitle={data.site.siteMetadata.headerName} />
+		{children()}
   </div>
 )
 
@@ -52,7 +45,8 @@ export const query = graphql`
     site {
       siteMetadata {
 				name,
-        title,
+				title,
+				headerName,
 				description
       }
     }

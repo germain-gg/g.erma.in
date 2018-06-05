@@ -2,7 +2,9 @@ import React from 'react';
 import Header from '../components/header'
 
 const IndexPage = ({ data }) => (
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <section role="main">
+        <h2>Hello world</h2>
+    </section>
 );
 
 export default IndexPage;
