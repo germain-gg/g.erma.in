@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import theme from '../style/theme';
 import socialIconImgFactory from '../components/socialicon';

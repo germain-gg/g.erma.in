@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const NotFoundPage = () => (
-  <Fragment>
+  <div>
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Fragment>
+  </div>
 )
 
 export default NotFoundPage
