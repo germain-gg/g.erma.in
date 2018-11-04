@@ -14,11 +14,6 @@ import Twitter from '../static/twitter.svg';
  * I'll do this using gatsby-image later :D 
  */
 
-const Icon = styled.img`
-    vertical-align: middle;
-    margin-right: ${theme.spacing};
-`
-
 export default (iconName, iconAlt) => {
     let icon;
     switch (iconName) {
@@ -43,6 +38,6 @@ export default (iconName, iconAlt) => {
     }
 
     return (props) => (
-        <Icon src={icon} {...props} /> 
+        <img src={icon} alt={iconAlt} {...props} /> 
     )
 }

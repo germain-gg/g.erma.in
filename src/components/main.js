@@ -1,16 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
-import theme from '../style/theme';
 
-export default styled.section.attrs({
+const Main = styled.main.attrs({
     role: 'main'
 })`
-    margin: 0 auto;
-    position: relative;
-    padding: ${theme.spacing} 0;
-    max-width: ${theme.siteWidth};
+    padding: 20px;
+    background: #fff;
+    border-radius: 0 0 3px 3px;
+`;
 
-    @media (max-width: calc(${theme.siteWidth} + ${theme.spacing} + ${theme.spacing})) {
-        margin: 0 ${theme.spacing};
-    }
-`
+export default Main;

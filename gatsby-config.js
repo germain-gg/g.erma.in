@@ -5,10 +5,6 @@ module.exports = {
 		headerName: 'Germain Souquet',
 		title: '<g.erma.in/> | Front-end development, HTML, CSS & JavaScript',
 		description: 'Passionate front-end developer, lover of the web, open-source rookie',
-		links: [
-			{ url: "/", name: "Home" },
-			{ url: "/blog", name: "Blog" }
-		],
 		accounts: [
 			{
 				id: 'github',
