@@ -112,13 +112,19 @@ class Header extends Component {
   }
 
   componentDidMount() {
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener("resize", this.drawCanvas);
+    }
+
     this.ctx = this.canvas.getContext('2d');
-    window.addEventListener("resize", this.drawCanvas);
     this.drawCanvas();
   }
 
   componentWillMount() {
-    window.removeEventListener("resize", this.drawCanvas);
+    if (typeof window !== 'undefined') {
+      window.removeEventListener("resize", this.drawCanvas);
+    }
   }
 
   render() {
