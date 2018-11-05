@@ -1,81 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import { throws } from 'assert';
 
-const StyledHeader = styled.header`
-  padding: 75px 20px 100px 20px;
-  background: #1d68ff;
-  background: linear-gradient(110deg, #1d68ff, #5d93ff);
-  position: relative;
-
-  border-radius: 3px 3px 0 0;
-
-  a, a:hover {
-    text-decoration: none;
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 0;
-    display: inline-block;
-    position: relative;
-    color: #fff;
-
-    &:before {
-      content: attr(data-site-title);
-      font-size: 50px;
-      font-style: italic;
-      position: relative;
-      z-index: 10;
-    }
-
-    &:after {
-      content: '';
-      border-bottom: 15px solid #111;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 25%;
-      opacity: .5;
-    }
-  }
-
-  [data-hovered=true] {
-    &:before {
-      content: attr(data-site-title-hovered);
-    }
-  }
-
-  canvas {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-`;
+import { Header as StyledHeader } from './styled';
 
 class Header extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      hovered: false
-    };
     this.drawCanvas = this.drawCanvas.bind(this);
-    this.setHoverState = this.setHoverState.bind(this);
-    this.unsetHoverState = this.unsetHoverState.bind(this);
-  }
-
-  setHoverState() {
-    this.setState({
-      hovered: true
-    });
-  }
-
-  unsetHoverState() {
-    this.setState({
-      hovered: false
-    });
   }
 
   drawCanvas() {
@@ -131,9 +63,6 @@ class Header extends Component {
     return (<StyledHeader>
       <a href="/">
         <h1
-          onMouseEnter={this.setHoverState}
-          onMouseLeave={this.unsetHoverState}
-          data-hovered={this.state.hovered ? "true" : "false"}
           data-site-title={this.props.siteTitle}
           data-site-title-hovered="\ʒɛʁ.mɛ̃\ Souquet"
         >

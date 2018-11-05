@@ -1,6 +1,7 @@
+import React from 'react';
 import Helmet from 'react-helmet'
 
-export const Head = ({ title, description, url, name }) => {
+export const Head = ({ title, description, url, name }) => (
 	<Helmet>
 		<title>{title}</title>
 		<meta name="description" content={description}/>
@@ -22,4 +23,6 @@ export const Head = ({ title, description, url, name }) => {
 		<html lang="en" dir="ltr"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     </Helmet>
-};
+);
+
+export default Head;

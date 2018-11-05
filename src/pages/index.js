@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import theme from '../style/theme';
 import socialIconImgFactory from '../components/socialicon';
 
-const UnstyledLink = styled.a`
-  color: ${theme.mainColor};
-  text-decoration: none;
-`
+import { InlineList } from '../components/styled';
 
 const IndexPage = ({ data }) => (
   <div>
@@ -14,16 +9,16 @@ const IndexPage = ({ data }) => (
       <p>🤓 Open source rookie</p>
       <p>🇬🇧 Always exploring the streets of London</p>
       <hr/>
-      <ul>
+      <InlineList>
         { data.site.siteMetadata.accounts.map(account => {
           const Img = socialIconImgFactory(account.id);
           return (<li key={account.id}>
-            <UnstyledLink href={account.url} target="_blank">
+            <a href={account.url} target="_blank" rel="noreferrer">
               <Img alt={`${account.name}'s icon`} width="32px" />
-            </UnstyledLink>
+            </a>
           </li>)
         })}
-      </ul>
+      </InlineList>
   </div>
 );
 

@@ -1,32 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ThemeProvider, injectGlobal } from 'styled-components';
 
 import Head from '../components/head';
 import Header from '../components/header';
-import Main from '../components/main';
+import { Wrapper, Main } from '../components/styled';
 
-import './reset.css'
-import './core.css'
+import * as theme from "./theme";
+import resetCSS from '../static/reset.css';
+
+injectGlobal`${resetCSS}`;
+injectGlobal`
+	body {
+		background: ${theme.background};
+	}
+`;
 
 const Layout = ({ children, data }) => (
-  <div>
-
-		<Head
-			url={data.site.siteMetadata.url}
-			name={data.site.siteMetadata.name}
-			title={data.site.siteMetadata.title}
-			description={data.site.siteMetadata.description}
-		/>
-
-		<Header
-			siteTitle={data.site.siteMetadata.headerName}
-		/>
-
-		<Main>
-			{children()}
-		</Main>
-
-  </div>
+	<ThemeProvider theme={theme}>
+		<Wrapper>
+			<Head
+				url={data.site.siteMetadata.url}
+				name={data.site.siteMetadata.name}
+				title={data.site.siteMetadata.title}
+				description={data.site.siteMetadata.description}
+			/>
+			<Header
+				siteTitle={data.site.siteMetadata.headerName}
+			/>
+			<Main>
+				{children()}
+			</Main>
+		</Wrapper>
+	</ThemeProvider>
 )
 
 Layout.propTypes = {
