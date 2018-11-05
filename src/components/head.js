@@ -1,5 +1,8 @@
 import React from 'react';
-import Helmet from 'react-helmet'
+import Helmet from 'react-helmet';
+
+import faviconIco from '../static/favicon.ico';
+import faviconPng from '../static/favicon.png';
 
 export const Head = ({ title, description, url, name }) => (
 	<Helmet>
@@ -19,6 +22,8 @@ export const Head = ({ title, description, url, name }) => (
 		<meta name="twitter:url" content={url}/>
 		<meta name="twitter:title" content={name} />
 		<meta name="twitter:description" content={description}/>
+
+		<link rel="icon" href={faviconIco} sizes="32x32" />
 
 		<html lang="en" dir="ltr"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
