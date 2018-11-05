@@ -2,7 +2,6 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import faviconIco from '../static/favicon.ico';
-import faviconPng from '../static/favicon.png';
 
 export const Head = ({ title, description, url, name }) => (
 	<Helmet>
