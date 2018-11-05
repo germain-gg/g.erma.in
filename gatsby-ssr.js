@@ -4,8 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-const { renderToString } = require("react-dom/server");
-const { ServerStyleSheet } = require("styled-components");
+import { renderToString } from require("react-dom/server");
+import { ServerStyleSheet } from require("styled-components");
 
 exports.replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }) => {
     const sheet = new ServerStyleSheet()

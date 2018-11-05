@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import theme from '../style/theme';
 
 import GitHub from '../static/github.svg';
 import Instagram from '../static/instagram.svg';
@@ -35,6 +33,7 @@ export default (iconName, iconAlt) => {
         case "twitter":
             icon = Twitter;
             break;
+        default:
     }
 
     return (props) => (

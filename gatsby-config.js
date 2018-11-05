@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   siteMetadata: {
 		url: 'https://g.erma.in',
 		name: '<g.erma.in/>',

@@ -52,7 +52,7 @@ class Header extends Component {
     this.drawCanvas();
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     if (typeof window !== 'undefined') {
       window.removeEventListener("resize", this.drawCanvas);
     }
