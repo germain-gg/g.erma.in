@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   siteMetadata: {
 		url: 'https://g.erma.in',
 		name: '<g.erma.in/>',
@@ -42,4 +42,4 @@ export default {
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-styled-components',
 	],
-}
+};
