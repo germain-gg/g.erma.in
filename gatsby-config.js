@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-		url: 'https://g.erma.in',
+		siteUrl: 'https://g.erma.in',
 		name: '<g.erma.in/>',
 		headerName: 'Germain Souquet',
 		title: '<g.erma.in/> | Front-end development, HTML, CSS & JavaScript',
@@ -37,8 +37,9 @@ module.exports = {
 				url: 'https://twitter.com/GermainSouquet'
 			}
 		]
-  	},	
+  	},
 	plugins: [
+		`gatsby-plugin-sitemap`,
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-styled-components',
 	],

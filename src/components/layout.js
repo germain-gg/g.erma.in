@@ -16,7 +16,7 @@ body {
 `;
 
 const Layout = ({ children, data }) => {
-    const { url, name, title, description, headerName } = data.site.siteMetadata;
+    const { siteUrl, name, title, description, headerName } = data.site.siteMetadata;
     return (
         <>
             <ResetCSS />
@@ -24,7 +24,7 @@ const Layout = ({ children, data }) => {
             <ThemeProvider theme={theme}>
                 <Wrapper>
                     <Head
-                        url={url}
+                        url={siteUrl}
                         name={name}
                         title={title}
                         description={description}

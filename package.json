@@ -6,7 +6,9 @@
   "dependencies": {
     "gatsby": "^2.0.38",
     "gatsby-cli": "^2.4.4",
+    "gatsby-link": "^2.0.6",
     "gatsby-plugin-react-helmet": "^3.0.1",
+    "gatsby-plugin-sitemap": "^2.0.2",
     "gatsby-plugin-styled-components": "^3.0.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",

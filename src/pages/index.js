@@ -12,7 +12,7 @@ const IndexPage = () => (
       query IndexPage {
         site {
           siteMetadata {
-            url,
+            siteUrl,
             name,
             title,
             headerName,
@@ -37,7 +37,7 @@ const IndexPage = () => (
           Open source rookie
         </p>
         <p>
-          <span role="img" aria-labelledby="United Kingdom flag">🇬🇧</span> 
+          <span role="img" aria-labelledby="United Kingdom flag">🇬🇧</span>
           Always exploring London
         </p>
         <hr/>
