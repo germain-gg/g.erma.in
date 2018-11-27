@@ -9,7 +9,7 @@ import Twitter from '../static/twitter.svg';
 
 /**
  * I'm slightly ashamed of this file
- * I'll do this using gatsby-image later :D 
+ * I'll do this using gatsby-image later :D
  */
 
 export default (iconName, iconAlt) => {
@@ -37,6 +37,6 @@ export default (iconName, iconAlt) => {
     }
 
     return (props) => (
-        <img src={icon} alt={iconAlt} {...props} /> 
+        <img src={icon} alt={iconAlt} {...props} />
     )
 }

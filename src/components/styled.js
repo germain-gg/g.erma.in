@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import curve from '../static/curve.svg';
 
 export const Wrapper = styled.div(({ theme }) => ({
 	maxWidth: theme.width,
@@ -17,11 +18,26 @@ export const Main = styled.main.attrs({
 
 export const Header = styled.header`
 	padding: 75px 20px 100px 20px;
-	background: ${({ theme }) => theme.primary};
-	background: linear-gradient(110deg, ${({ theme }) => theme.primary}, ${({ theme }) => theme.secondary});
+	background-color: ${({ theme }) => theme.primary};
+	background-image:  linear-gradient(110deg, ${({ theme }) => theme.primary}, ${({ theme }) => theme.secondary});
 	position: relative;
 
 	border-radius: ${({ theme }) => `${theme.borderRadius} ${theme.borderRadius} 0 0`};
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-image: url(${curve});
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		background-size: contain;
+		pointer-events: none;
+		transform: scaleX(-1);
+	}
 
 	a, a:hover {
 		text-decoration: none;
@@ -55,13 +71,6 @@ export const Header = styled.header`
 		&:hover:before {
 			content: attr(data-site-title-hovered);
 		}
-	}
-
-	canvas {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
 	}
 `;
 
